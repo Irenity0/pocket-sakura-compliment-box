@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Compliment Sakura Box</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sakura-bg': '#FFF7F2',
+                        'sakura-pink': '#FADADD',
+                        'sakura-text': '#4B3F3F'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="icon" href="data:image/svg+xml,
+  %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E
+    %3Ctext y='85' font-size='90'%3E🌸%3C/text%3E
+  %3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen bg-sakura-bg text-sakura-text font-sans overflow-hidden">
+    <!-- main container -->
+    <div class="flex flex-col items-center justify-center h-screen p-4">
+
+        <!-- compliment display area -->
+        <div id="complimentCard"
+            class="hidden max-w-2xl mx-auto text-center transform transition-all duration-500 ease-in-out opacity-0 scale-95">
+
+            <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg p-8 border border-sakura-pink/20">
+                <p id="complimentText"
+                    class="text-xl md:text-2xl lg:text-3xl leading-relaxed mb-6 text-sakura-text font-medium">
+                    <!-- Compliment will appear here -->
+                </p>
+                <button id="copyBtn"
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-sakura-pink hover:bg-sakura-pink/80 text-sakura-text rounded-full transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-sakura-pink/50">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    Copy
+                </button>
+            </div>
+
+        </div>
+
+        <!-- welcome message -->
+        <div id="welcomeMessage" class="text-center max-w-lg mx-auto transition-all duration-500 ease-in-out">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4 text-sakura-text font-light">
+                🌸 Sakura Box
+            </h1>
+            <p class="text-lg md:text-xl text-sakura-text/70 mb-8">
+                Click the sakura blossom to receive a gentle compliment
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Sakura Button -->
+    <button id="sakuraBtn"
+        class="fixed bottom-10 left-4 text-6xl md:text-8xl hover:scale-110 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-sakura-pink/30 rounded-full p-2 hover:drop-shadow-lg">
+        🌸
+    </button>
+
+    <!-- Copy Success Toast -->
+    <div id="copyToast"
+        class="fixed top-4 right-0 bg-rose-200 text-sakura-text px-4 py-2 rounded-lg shadow-lg font-medium transform translate-x-full transition-transform duration-300 ease-in-out">
+        ✨ Copied to clipboard!
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
